@@ -8,9 +8,5 @@ export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
   server: {
     port: 5173,
-    https: {
-      key: fs.readFileSync("../localhost-key.pem"),
-      cert: fs.readFileSync("../localhost.pem"),
-    },
   },
 });
