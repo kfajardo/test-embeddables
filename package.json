@@ -1,5 +1,5 @@
 {
-  "name": "@bison/client",
+  "name": "test-embeddable-client",
   "private": true,
   "type": "module",
   "scripts": {
