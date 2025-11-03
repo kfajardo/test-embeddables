@@ -3,7 +3,7 @@ import { fetchMoovTokenByID, fetchPlaidToken } from "./utils";
 
 export const useMoovMethods = () => {
   const generateMoovToken = useCallback(async (selectedAccount) => {
-    await fetchMoovTokenByID(selectedAccount);
+    return await fetchMoovTokenByID(selectedAccount);
   }, []);
 
   return {
@@ -13,7 +13,7 @@ export const useMoovMethods = () => {
 
 export const usePlaidMethods = () => {
   const generatePlaidToken = useCallback(async () => {
-    await fetchPlaidToken();
+    return await fetchPlaidToken();
   }, []);
 
   return { generatePlaidToken };
