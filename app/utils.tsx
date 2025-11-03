@@ -1,5 +1,7 @@
 export const fetchMoovTokenByID = async (id: string) => {
-  const res = await fetch(`https://localhost:3000/accessToken?accountID=${id}`);
+  const res = await fetch(
+    `https://test-embeddables-g50x6erea-kims-projects-3d64e480.vercel.app/accessToken?accountID=${id}`
+  );
 
   const data = await res.json();
 
@@ -7,9 +9,12 @@ export const fetchMoovTokenByID = async (id: string) => {
 };
 
 export const fetchPlaidToken = async () => {
-  const res = await fetch("https://localhost:3000/plaid/create-token", {
-    method: "POST",
-  });
+  const res = await fetch(
+    "https://test-embeddables-g50x6erea-kims-projects-3d64e480.vercel.app/plaid/create-token",
+    {
+      method: "POST",
+    }
+  );
 
   const data = await res.json();
 
@@ -21,7 +26,7 @@ export const createProcessToken = async (
   bankAccountID: string
 ) => {
   const response = await fetch(
-    "https://localhost:3000/plaid/moov-processor-token",
+    "https://test-embeddables-g50x6erea-kims-projects-3d64e480.vercel.app/plaid/moov-processor-token",
     {
       method: "POST",
       headers: {
@@ -38,7 +43,9 @@ export const createProcessToken = async (
 };
 
 export const fetchAllMoovAccounts = async () => {
-  const result = await fetch("https://localhost:3000/accounts");
+  const result = await fetch(
+    "https://test-embeddables-g50x6erea-kims-projects-3d64e480.vercel.app/accounts"
+  );
   const data = await result.json();
 
   return data;

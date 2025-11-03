@@ -22,7 +22,7 @@ export default function Home() {
     console.log("metadata", metadata);
 
     const processorToken = await fetch(
-      "https://localhost:3000/plaid/moov-processor-token",
+      "https://test-embeddables-g50x6erea-kims-projects-3d64e480.vercel.app/plaid/moov-processor-token",
       {
         method: "POST",
         headers: {
@@ -42,7 +42,7 @@ export default function Home() {
     const WIO_MOOV_ACCOUNT_ID = "14081a1e-eba0-4779-8572-db820ce73777";
 
     const moovPlaidBankAccount = await fetch(
-      `https://localhost:3000/accounts/${WIO_MOOV_ACCOUNT_ID}/add-plaid-link`,
+      `https://test-embeddables-g50x6erea-kims-projects-3d64e480.vercel.app/accounts/${WIO_MOOV_ACCOUNT_ID}/add-plaid-link`,
       {
         method: "POST",
         headers: {
@@ -61,9 +61,12 @@ export default function Home() {
 
   const fetchToken = useCallback(async () => {
     try {
-      const res = await fetch("https://localhost:3000/plaid/create-token", {
-        method: "POST",
-      });
+      const res = await fetch(
+        "https://test-embeddables-g50x6erea-kims-projects-3d64e480.vercel.app/plaid/create-token",
+        {
+          method: "POST",
+        }
+      );
       const data = await res.json();
 
       setToken(data.link_token);
