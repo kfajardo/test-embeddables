@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { fetchMoovTokenByID } from "./utils";
+import { fetchMoovTokenByID, fetchPlaidToken } from "./utils";
 
 export const useMoovMethods = () => {
   const generateMoovToken = useCallback(async (selectedAccount) => {
@@ -13,7 +13,7 @@ export const useMoovMethods = () => {
 
 export const usePlaidMethods = () => {
   const generatePlaidToken = useCallback(async () => {
-    await generatePlaidToken();
+    await fetchPlaidToken();
   }, []);
 
   return { generatePlaidToken };
